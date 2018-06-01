@@ -7,10 +7,20 @@ public class BoatReservation extends Reservation {
         super(name, time_slot);
     }
     
+    /**
+     * Add a boat to the list of preferences.
+     *
+     * @param type The type of boat to add.
+     */
     void addBoatPreference(String type) {
         preferences.add(type);
     }
     
+    /**
+     * Gets the ArrayList of preferences.
+     *
+     * @return The ArrayList of Strings containing the person's preferences.
+     */
     public ArrayList<String> getPreferences() {
         return this.preferences;
     }

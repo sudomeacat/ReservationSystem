@@ -1,7 +1,7 @@
 public class RestaurantReservation extends Reservation {
     private int num_seats_needed;
     
-    public RestaurantReservation(String name, int time_slot, int num_seats_needed) {
+    public RestaurantReservation(int num_seats_needed, int time_slot, String name) {
         super(name, time_slot);
         this.num_seats_needed = num_seats_needed;
     }

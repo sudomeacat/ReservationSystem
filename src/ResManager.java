@@ -54,12 +54,17 @@ public class ResManager<ItemType extends ReservableItem, ResType extends Reserva
     
     public void sortReservations() {
         for (int i = 0; i < reservations.size(); i++) {
+            boolean is_sorted = true;
             for (int j = 0; j < reservations.size(); j++) {
                 if(reservations.get(i).compareTo(reservations.get(j)) < 0) {
                     ResType type = reservations.get(i);
                     reservations.set(i, reservations.get(j));
                     reservations.set(j, type);
+                    is_sorted = false;
                 }
+            }
+            if (is_sorted) {
+                break;
             }
         }
     }
@@ -72,7 +77,7 @@ public class ResManager<ItemType extends ReservableItem, ResType extends Reserva
     public Iterator<Reservation> getAllReservations() {
         return new Iterator<Reservation>() {
             int i = 0;
-            
+    
             @Override
             public boolean hasNext() {
                 return i < reservations.size();

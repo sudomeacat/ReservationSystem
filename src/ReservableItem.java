@@ -9,10 +9,15 @@ public abstract class ReservableItem {
         this.id = id.nextLine();
     }
     
-    public final String getId() {
+    public String getId() {
         return id;
     }
     
+    /**
+     *
+     * @param res
+     * @return
+     */
     public abstract int getFitnessValue(Reservation res);
     
     public final Reservation[] getReservations() {
